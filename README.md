@@ -1,4 +1,8 @@
-# 🎮 CreeperCraft - Premium Minecraft Server Template
+# 🎮 CreeperCraft - Premium Minecraft Server List Template 
+
+(Legacy Server List Template from Minecraft Server Buzz Script)
+
+Legacy Website Template from [Minecraft Server Buzz](https://minecraftserver.buzz)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-18.3.1-blue.svg)](https://reactjs.org/)
@@ -383,10 +387,9 @@ A: Ensure Tailwind CSS is properly configured and animations are enabled.
 **Q: Mobile layout broken?**
 A: Test responsive classes and check viewport meta tag.
 
-### 💬 **Get Help**
-- 🌐 Website: [bytekron.com](https://bytekron.com)
-- 💬 Discord: [@bytekron](https://discord.com/users/bytekron)
-- 📧 Email: contact@bytekron.com
+### 💬 **Want to buy your own custom [minecraft server list](https://minecraftserver.buzz)?**
+- 💬 Discord: bytekron
+
 
 ---
 
@@ -451,6 +454,5 @@ See [LICENSE](./LICENSE) for full details.
 
 **Made with ❤️ for the Minecraft community**
 
-[🌐 Visit Bytekron](https://bytekron.com) • [💬 Discord: @bytekron](https://discord.com/users/bytekron) • [📧 Contact](mailto:contact@bytekron.com)
 
 </div>
