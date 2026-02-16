@@ -4,6 +4,8 @@
 
 Legacy Website Template from [Minecraft Server Buzz](https://minecraftserver.buzz)
 
+Demo: [Legacy Minecraft Server List Demo](https://magnificent-douhua-b85183.netlify.app)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![React](https://img.shields.io/badge/React-18.3.1-blue.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue.svg)](https://www.typescriptlang.org/)
