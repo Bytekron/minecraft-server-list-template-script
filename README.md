@@ -12,6 +12,10 @@ Legacy Website Template from [Minecraft Server Buzz](https://minecraftserver.buz
 
 A **production-ready**, **fully-featured** Minecraft server website template built with modern web technologies. Perfect for server owners who want a professional, engaging, and conversion-optimized website.
 
+
+<img width="552" height="759" alt="Screenshot 2025-08-03 212829" src="https://github.com/user-attachments/assets/90349930-51d8-4e3a-9456-e3bdc7326ae5" />
+
+
 ## 🌟 **Why Choose This Template?**
 
 ### ✨ **Premium Features**
