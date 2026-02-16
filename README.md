@@ -66,7 +66,7 @@ A **production-ready**, **fully-featured** Minecraft server list template built 
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/minecraft-server-list.git
+git clone https://github.com/Bytekron/minecraft-server-list-template-script.git
 cd minecraft-server-list
 ```
 
