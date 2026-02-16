@@ -16,7 +16,10 @@ Demo: [Legacy Minecraft Server List Demo](https://magnificent-douhua-b85183.netl
 A **production-ready**, **fully-featured** Minecraft server list template built with modern web technologies. Perfect for creating your own Minecraft server listing website with advanced features like user authentication, server monitoring, analytics, and more.
 
 
-<img width="552" height="759" alt="Screenshot 2025-08-03 212829" src="https://github.com/user-attachments/assets/90349930-51d8-4e3a-9456-e3bdc7326ae5" />
+<img width="552" height="759" alt="minecraft server list website template script" src="https://github.com/user-attachments/assets/90349930-51d8-4e3a-9456-e3bdc7326ae5" />
+
+
+
 
 ---
 
