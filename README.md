@@ -1,4 +1,4 @@
-# CreeperCraft - Premium Minecraft Server List Template 
+# CreeperCraft - Premium Minecraft Server List Template
 
 (Legacy Server List Template from Minecraft Server Buzz Script)
 
@@ -10,56 +10,61 @@ Demo: [Legacy Minecraft Server List Demo](https://magnificent-douhua-b85183.netl
 [![React](https://img.shields.io/badge/React-18.3.1-blue.svg)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue.svg)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.1-38B2AC.svg)](https://tailwindcss.com/)
-[![Vite](https://img.shields.io/badge/Vite-5.4.2-646CFF.svg)](https://vitejs.dev/)
+[![Next.js](https://img.shields.io/badge/Next.js-14.0.4-black.svg)](https://nextjs.org/)
+[![Supabase](https://img.shields.io/badge/Supabase-2.53.0-green.svg)](https://supabase.com/)
 
-A **production-ready**, **fully-featured** Minecraft server website template built with modern web technologies. Perfect for server owners who want a professional, engaging, and conversion-optimized website.
+A **production-ready**, **fully-featured** Minecraft server list template built with modern web technologies. Perfect for creating your own Minecraft server listing website with advanced features like user authentication, server monitoring, analytics, and more.
 
 
 <img width="552" height="759" alt="Screenshot 2025-08-03 212829" src="https://github.com/user-attachments/assets/90349930-51d8-4e3a-9456-e3bdc7326ae5" />
 
+---
 
-## 🌟 **Why Choose This Template?**
+## 🌟 **Features**
 
-### ✨ **Premium Features**
-- 🎯 **Conversion Optimized** - Designed to turn visitors into players
-- 📱 **Fully Responsive** - Perfect on all devices (mobile, tablet, desktop)
-- ⚡ **Lightning Fast** - Optimized for speed and performance
-- 🔍 **SEO Ready** - Complete SEO optimization out of the box
-- 🎨 **Modern Design** - Apple-level design aesthetics with smooth animations
-- 🛡️ **Production Ready** - Built with enterprise-grade code quality
+### 🎯 **Core Functionality**
+- **Server List** - Comprehensive listing with filtering, search, and pagination
+- **Category Pages** - Dedicated pages for gamemodes, versions, and platforms
+- **Server Detail Pages** - Individual pages for each server with full details
+- **User Authentication** - Email/password authentication with Supabase
+- **Server Management** - Add, edit, and manage your servers
+- **Admin Panel** - Moderate and approve server submissions
+- **Voting System** - Users can vote for their favorite servers
+- **Reviews & Ratings** - Rate and review servers
+- **Sponsored Servers** - Featured listings for premium visibility
 
-### 🚀 **Complete Sections**
-- **Hero Section** - Engaging landing with live player count
-- **Rankings** - Player, guild, and kill leaderboards
-- **Shop** - VIP packages with animated crates and bundles
-- **Server Map** - Interactive biome map with 9 unique regions
-- **Voting** - Multi-platform voting system with rewards
-- **Bans** - Transparent moderation system
-- **Staff** - Team showcase with Minecraft heads
-- **FAQ** - Comprehensive help section
-- **Footer** - Complete site navigation and links
+### 🔧 **Advanced Features**
+- **Server Monitoring** - Automatic server ping checks every 30 minutes
+- **Analytics Tracking** - Track impressions, clicks, votes, and IP copies
+- **Server Icons** - Display server favicons
+- **Custom Banners** - Upload and display custom server banners
+- **SEO Optimized** - Dynamic sitemap generation and meta tags
+- **Responsive Design** - Mobile-first design with Tailwind CSS
+- **Real-time Updates** - Server status updates in real-time
 
-### 💎 **Technical Excellence**
-- **TypeScript** - Type-safe development
-- **Component Architecture** - Modular, maintainable code
-- **Comprehensive Documentation** - Every component fully documented
-- **Accessibility** - WCAG compliant with proper ARIA labels
-- **Performance** - Optimized images, lazy loading, efficient animations
+### 🎨 **Filtering & Search**
+- Filter by gamemode (40+ gamemodes supported)
+- Filter by Minecraft version (1.7 - 1.21)
+- Filter by platform (Java, Bedrock, Cross-platform)
+- Filter by country (100+ countries)
+- Sort by votes, players, or latest
+- Full-text search across server names, descriptions, and IPs
 
 ---
 
 ## 🚀 **Quick Start**
 
 ### Prerequisites
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn package manager
+- Supabase account (free tier available)
 
 ### Installation
 
-1. **Clone or download** this template
+1. **Clone the repository**
 ```bash
-git clone https://github.com/bytekron/creepercraft-template.git
-cd creepercraft-template
+git clone https://github.com/yourusername/minecraft-server-list.git
+cd minecraft-server-list
 ```
 
 2. **Install dependencies**
@@ -67,335 +72,224 @@ cd creepercraft-template
 npm install
 ```
 
-3. **Start development server**
+3. **Configure environment variables**
+
+Create a `.env` file in the root directory:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+Get your Supabase credentials from your Supabase project dashboard.
+
+4. **Set up the database**
+
+Run the migrations in your Supabase dashboard or use the Supabase CLI:
+
+```bash
+supabase migration up
+```
+
+5. **Start development server**
 ```bash
 npm run dev
 ```
 
-4. **Open your browser** to `http://localhost:5173`
-
-That's it! Your Minecraft server website is now running locally.
+6. **Open your browser** to `http://localhost:3000`
 
 ---
 
 ## 📁 **Project Structure**
 
 ```
-creepercraft-template/
-├── 📁 public/                 # Static assets
-│   ├── 🖼️ images/            # Server images and backgrounds
-│   ├── 🤖 robots.txt         # SEO robots file
-│   ├── 🗺️ sitemap.xml        # SEO sitemap
-│   └── 📱 site.webmanifest   # PWA manifest
+minecraft-server-list/
+├── 📁 public/                    # Static assets
+│   ├── 🖼️ *.webp, *.png          # Images and banners
+│   ├── 🤖 robots.txt             # SEO robots file
+│   └── 🗺️ sitemap.xml            # SEO sitemap
 ├── 📁 src/
-│   ├── 📁 components/         # React components
-│   │   ├── 🏠 HeroSection.tsx
-│   │   ├── 🏆 RankingsSection.tsx
-│   │   ├── 🛒 ServerShopSection.tsx
-│   │   ├── 🗺️ ServerMapSection.tsx
-│   │   ├── 🗳️ VoteSection.tsx
-│   │   ├── 🚫 BansSection.tsx
-│   │   ├── 👥 StaffSection.tsx
-│   │   ├── ❓ FAQSection.tsx
-│   │   └── 🦶 Footer.tsx
-│   ├── 📁 data/              # Data configurations
-│   │   ├── 📊 rankings.ts    # Player/guild rankings
-│   │   └── 📦 bundles.ts     # Shop bundles
-│   ├── 🎨 index.css         # Global styles
-│   ├── ⚛️ App.tsx           # Main app component
-│   └── 🚀 main.tsx          # App entry point
-├── 📋 package.json           # Dependencies
-├── ⚙️ tailwind.config.js     # Tailwind configuration
-├── 📖 README.md              # This file
-└── 📚 CUSTOMIZATION.md       # Customization guide
+│   ├── 📁 app/                    # Next.js app directory
+│   │   ├── page.tsx              # Home page
+│   │   ├── layout.tsx            # Root layout
+│   │   ├── 📁 admin/             # Admin panel page
+│   │   ├── 📁 category/[category]/ # Category pages
+│   │   ├── 📁 server/[slug]/     # Server detail pages
+│   │   ├── 📁 my-servers/        # User's servers page
+│   │   ├── 📁 edit-account/      # Account settings page
+│   │   └── 📁 api/               # API routes
+│   ├── 📁 components/            # React components
+│   │   ├── Navigation.tsx        # Navigation with filters
+│   │   ├── ServerList.tsx        # Server list component
+│   │   ├── ServerPage.tsx        # Server detail page
+│   │   ├── AuthModal.tsx         # Login/register modal
+│   │   ├── AddServerModal.tsx    # Add server modal
+│   │   ├── EditServerModal.tsx   # Edit server modal
+│   │   ├── VotingModal.tsx       # Voting modal
+│   │   ├── SponsoredServers.tsx  # Sponsored servers
+│   │   ├── AdminPanel.tsx        # Admin dashboard
+│   │   └── Footer.tsx            # Footer component
+│   ├── 📁 data/                  # Data configurations
+│   │   └── categoryDefinitions.ts # Category metadata
+│   ├── 📁 hooks/                 # Custom React hooks
+│   │   └── useAuth.ts            # Authentication hook
+│   ├── 📁 lib/                   # Utility libraries
+│   │   └── supabase.ts           # Supabase client
+│   ├── 📁 services/              # Business logic services
+│   │   ├── serverService.ts      # Server CRUD operations
+│   │   ├── analyticsService.ts   # Analytics tracking
+│   │   ├── serverMonitoringService.ts # Server monitoring
+│   │   ├── sponsoredServerService.ts  # Sponsored servers
+│   │   ├── adminService.ts       # Admin operations
+│   │   ├── cronService.ts        # Background tasks
+│   │   └── sitemapService.ts     # Sitemap generation
+│   └── 📁 types/                 # TypeScript types
+│       └── database.ts           # Database types
+├── 📁 supabase/
+│   ├── 📁 migrations/            # Database migrations
+│   └── 📁 functions/             # Edge functions
+│       ├── server-monitor/       # Server monitoring function
+│       └── sitemap-servers/      # Sitemap generation function
+├── 📋 package.json               # Dependencies
+├── ⚙️ tailwind.config.js         # Tailwind configuration
+├── ⚙️ next.config.js             # Next.js configuration
+└── 📖 README.md                  # This file
 ```
 
 ---
 
-## 🎨 **Customization Guide**
+## 🎨 **Customization**
 
-### 🎯 **Basic Customization (5 minutes)**
+### 🎯 **Branding**
 
-#### 1. **Server Information**
-Edit `src/App.tsx` to update your server details:
+1. Update logo and branding in `src/components/Navigation.tsx`
+2. Change color scheme in `tailwind.config.js`
+3. Update meta tags in `src/app/layout.tsx`
 
-```typescript
-// Update server IP
-const copyServerIP = () => {
-  navigator.clipboard.writeText('your-server-ip.com'); // Change this
-};
+### 📦 **Database Schema**
 
-// Update player counts
-const [playerCount, setPlayerCount] = useState(260); // Your player count
-const [onlineCount, setOnlineCount] = useState(139);  // Your online count
-```
+The template includes the following tables:
+- `servers` - Server listings with all metadata
+- `user_profiles` - User profiles and settings
+- `reviews` - Server reviews and ratings
+- `votes` - Voting records
+- `sponsored_servers` - Sponsored server listings
+- `server_analytics` - Analytics data
+- `server_icons` - Server favicon storage
+- `admin_settings` - Admin configuration
 
-#### 2. **Server Name & Branding**
-Update the title in `index.html`:
-```html
-<title>YourServer - Premium Minecraft Server</title>
-```
+All tables have Row Level Security (RLS) policies enabled for data protection.
 
-Update navigation in `src/components/Navigation.tsx`:
-```typescript
-<span className="text-xl font-bold text-white">YOURSERVER</span>
-```
+### 🌐 **Supported Categories**
 
-#### 3. **Colors & Theme**
-Edit `tailwind.config.js` to change your brand colors:
-```javascript
-colors: {
-  'primary-dark': '#111212',    // Dark background
-  'secondary-dark': '#1A1C1D',  // Secondary background
-  'grass-green': '#3CCE3C',     // Your brand color
-  'alert-red': '#E33B3B',       // Error/alert color
-}
-```
-
-### 🏆 **Rankings Customization**
-
-Update `src/data/rankings.ts` with your server's top players:
-
-```typescript
-export const playerRankings: Player[] = [
-  { 
-    name: 'YourTopPlayer', 
-    level: 1500, 
-    rank: 1, 
-    avatar: 'https://mc-heads.net/avatar/YourTopPlayer/64' 
-  },
-  // Add more players...
-];
-```
-
-### 🛒 **Shop Customization**
-
-Edit `src/data/bundles.ts` to update your server packages:
-
-```typescript
-export const bundles: Bundle[] = [
-  {
-    name: 'Starter Pack',
-    price: '€25',        // Your pricing
-    items: ['⚔️', '🛡️', '🍖', '💎'] // Your items
-  },
-  // Add more bundles...
-];
-```
-
-### 👥 **Staff Section**
-
-Update `src/components/StaffSection.tsx` with your staff team:
-
-```typescript
-const staffMembers: StaffMember[] = [
-  {
-    name: 'YourUsername',
-    role: 'Server Owner',
-    roleType: 'owner',
-    description: 'Your description here',
-    avatar: 'https://mc-heads.net/avatar/YourUsername/128',
-    // ... other properties
-  },
-  // Add your staff members...
-];
-```
+The template supports 40+ server categories including:
+- **Gamemodes**: Survival, PvP, Skyblock, Prison, Factions, Creative, and more
+- **Platforms**: Java Edition, Bedrock Edition, Cross-platform
+- **Versions**: Minecraft 1.7 through 1.21
+- **Special**: Popular, New, Whitelist servers
 
 ---
 
-## 🔧 **Advanced Customization**
+## 🔧 **Configuration**
 
-### 🎨 **Adding New Sections**
+### Environment Variables
 
-1. **Create component file** in `src/components/`
-2. **Import and add** to `src/App.tsx`
-3. **Add navigation link** in `src/components/Navigation.tsx`
-4. **Style with Tailwind** classes
-
-### 🌈 **Custom Animations**
-
-Add new animations in `src/index.css`:
-
-```css
-@keyframes your-animation {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-.your-animation {
-  animation: your-animation 2s ease-in-out infinite;
-}
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
 
-### 📱 **Responsive Design**
+### Supabase Setup
 
-Use Tailwind's responsive prefixes:
-- `sm:` - Small screens (640px+)
-- `md:` - Medium screens (768px+)
-- `lg:` - Large screens (1024px+)
-- `xl:` - Extra large screens (1280px+)
+1. Create a new Supabase project
+2. Run all migrations from `supabase/migrations/`
+3. Deploy edge functions from `supabase/functions/`
+4. Configure authentication providers (email/password is default)
+
+### Server Monitoring
+
+The template includes automatic server monitoring via edge functions that:
+- Ping servers every 30 minutes
+- Update player counts and status
+- Store server icons
+- Calculate uptime percentages
 
 ---
 
 ## 🚀 **Deployment**
 
-### 📦 **Build for Production**
+### Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Import project in Vercel
+3. Add environment variables
+4. Deploy automatically
+
+### Build for Production
 
 ```bash
 npm run build
 ```
 
-This creates a `dist/` folder with optimized files.
+### Type Checking
 
-### 🌐 **Deployment Options**
-
-#### **Netlify (Recommended)**
-1. Connect your GitHub repository
-2. Build command: `npm run build`
-3. Publish directory: `dist`
-
-#### **Vercel**
-1. Import your project
-2. Framework preset: Vite
-3. Deploy automatically
-
-#### **Traditional Hosting**
-1. Upload `dist/` folder contents
-2. Configure web server for SPA routing
-
----
-
-## 🔍 **SEO Optimization**
-
-### ✅ **Included SEO Features**
-- **Meta tags** - Title, description, keywords
-- **Open Graph** - Social media sharing
-- **Structured data** - Rich snippets
-- **Sitemap** - Search engine indexing
-- **Robots.txt** - Crawling instructions
-- **Performance** - Fast loading times
-
-### 🎯 **SEO Customization**
-
-Update `index.html` meta tags:
-```html
-<title>Your Server - Premium Minecraft Experience</title>
-<meta name="description" content="Your server description here" />
-<meta name="keywords" content="your, server, keywords" />
+```bash
+npm run type-check
 ```
 
-Update structured data:
-```html
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Your Server Name",
-  "url": "https://yourserver.com"
-}
-</script>
+### Linting
+
+```bash
+npm run lint
 ```
 
 ---
 
-## 📊 **Analytics & Tracking**
+## 🔍 **SEO Features**
 
-### 🔗 **Google Analytics**
-Add to `index.html` before closing `</head>`:
-
-```html
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'GA_TRACKING_ID');
-</script>
-```
-
-### 📈 **Conversion Tracking**
-Track important actions:
-- Server IP copies
-- Shop button clicks
-- Discord joins
-- Vote completions
+- **Dynamic Sitemap** - Auto-generated XML sitemap
+- **Server-side Rendering** - Full SSR with Next.js
+- **Meta Tags** - Dynamic meta tags for each page
+- **Structured Data** - Schema.org markup for servers
+- **Robots.txt** - Search engine crawling configuration
+- **Open Graph** - Social media preview cards
 
 ---
 
-## 🛡️ **Security & Performance**
+## 🛡️ **Security**
 
-### ✅ **Security Features**
-- **XSS Protection** - Content Security Policy headers
-- **HTTPS Ready** - Secure by default
-- **Input Validation** - Sanitized user inputs
-- **No Vulnerabilities** - Regular dependency updates
-
-### ⚡ **Performance Features**
-- **Lazy Loading** - Images load when needed
-- **Code Splitting** - Optimized bundle sizes
-- **Caching** - Browser caching headers
-- **Compression** - Gzip/Brotli ready
+- **Row Level Security** - All database tables protected with RLS
+- **Authentication** - Secure email/password auth with Supabase
+- **Input Validation** - Server-side validation for all inputs
+- **XSS Protection** - Sanitized user inputs
+- **CSRF Protection** - Built-in with Next.js
+- **Rate Limiting** - API rate limiting on edge functions
 
 ---
 
-## 🎮 **Integration Examples**
+## 📊 **Analytics**
 
-### 🔌 **Server API Integration**
+The template tracks:
+- Server impressions (views)
+- Server page clicks
+- IP address copies
+- Votes
+- Review submissions
 
-```typescript
-// Example: Fetch live player count
-const fetchPlayerCount = async () => {
-  try {
-    const response = await fetch('https://api.yourserver.com/players');
-    const data = await response.json();
-    setPlayerCount(data.total);
-    setOnlineCount(data.online);
-  } catch (error) {
-    console.error('Failed to fetch player count:', error);
-  }
-};
-```
-
-### 💳 **Payment Integration**
-
-```typescript
-// Example: Stripe integration
-const handlePurchase = async (packageId: string) => {
-  const response = await fetch('/api/create-checkout', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ packageId })
-  });
-  const { url } = await response.json();
-  window.location.href = url;
-};
-```
+All analytics data is stored in Supabase and can be viewed in the admin panel or server analytics pages.
 
 ---
 
-## 🆘 **Support & Help**
+## 🎮 **Tech Stack**
 
-### 📚 **Documentation**
-- [Customization Guide](./CUSTOMIZATION.md)
-- [Component Documentation](./docs/COMPONENTS.md)
-- [Deployment Guide](./docs/DEPLOYMENT.md)
-
-### 🐛 **Common Issues**
-
-**Q: Images not loading?**
-A: Check image paths in `public/` folder and update URLs.
-
-**Q: Animations not working?**
-A: Ensure Tailwind CSS is properly configured and animations are enabled.
-
-**Q: Mobile layout broken?**
-A: Test responsive classes and check viewport meta tag.
-
-### 💬 **Want to buy your own custom [minecraft server list](https://minecraftserver.buzz)?**
-- 💬 Discord: bytekron
-
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Database**: Supabase (PostgreSQL)
+- **Authentication**: Supabase Auth
+- **Edge Functions**: Supabase Edge Functions (Deno)
+- **Icons**: Lucide React
+- **Deployment**: Vercel (recommended)
 
 ---
 
@@ -411,54 +305,21 @@ See [LICENSE](./LICENSE) for full details.
 
 ---
 
-## 🎉 **What's Included**
+## 💬 **Support**
 
-### 📦 **Template Package**
-- ✅ Complete source code
-- ✅ All components and assets
-- ✅ Documentation and guides
-- ✅ SEO optimization
-- ✅ Responsive design
-- ✅ TypeScript definitions
-- ✅ Tailwind configuration
-- ✅ Build configuration
-
-### 🎁 **Bonus Features**
-- 🎨 **10+ Animation Presets**
-- 🎯 **Conversion Optimization**
-- 📱 **PWA Ready**
-- 🔍 **SEO Checklist**
-- 📊 **Analytics Setup**
-- 🛡️ **Security Headers**
+### Want to buy your own custom [minecraft server list](https://minecraftserver.buzz)?
+- Discord: bytekron
 
 ---
 
-## 🌟 **Showcase**
+## 🎉 **Credits**
 
-> *"This template saved us weeks of development time. Our server registrations increased by 300% after launching!"*
-> 
-> **— MineCraft Pro Server**
-
-> *"The design is absolutely stunning and the code quality is enterprise-level. Highly recommended!"*
-> 
-> **— Epic Gaming Network**
-
----
-
-## 🚀 **Ready to Launch?**
-
-1. **⬇️ Download** the template
-2. **🎨 Customize** with your branding
-3. **🚀 Deploy** to your hosting
-4. **📈 Watch** your server grow!
-
-**Get started today and give your Minecraft server the professional website it deserves!**
+Built with modern web technologies and best practices. Special thanks to the Minecraft server community.
 
 ---
 
 <div align="center">
 
 **Made with ❤️ for the Minecraft community**
-
 
 </div>
