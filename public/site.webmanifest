@@ -1,0 +1,70 @@
+{
+  "name": "ServerCraft - Minecraft Server List",
+  "short_name": "ServerCraft",
+  "description": "Discover the best Minecraft servers! Browse thousands of servers by gamemode, version, and platform.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#5865F2",
+  "theme_color": "#5865F2",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["games", "entertainment", "utilities"],
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Java Servers",
+      "short_name": "Java",
+      "description": "Browse Java Edition servers",
+      "url": "/java",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Popular Servers",
+      "short_name": "Popular",
+      "description": "View most popular servers",
+      "url": "/popular",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Submit Server",
+      "short_name": "Submit",
+      "description": "Add your server to the list",
+      "url": "/submit",
+      "icons": [
+        {
+          "src": "/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton:wght@400&display=swap');
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+  
+  body {
+    @apply text-white font-sans;
+    background-color: #5865F2 !important;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-black tracking-wide;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 900 !important;
+    letter-spacing: 0.025em;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-secondary-dark/80 backdrop-blur-lg border border-white/10;
+  }
+  
+  .btn {
+    @apply px-6 py-3 rounded-lg font-bold transition-all duration-200 uppercase tracking-wide text-sm;
+  }
+  
+  .btn-green {
+    @apply bg-blue-500 hover:bg-blue-600 text-white hover:scale-105 shadow-lg;
+  }
+  
+  .btn-red {
+    @apply bg-alert-red hover:bg-red-700 text-white hover:scale-105 shadow-lg;
+  }
+  
+  .btn-gray {
+    @apply bg-gray-600 hover:bg-gray-500 text-white;
+  }
+  
+  .card {
+    @apply bg-secondary-dark/60 backdrop-blur-sm rounded-xl border border-white/10 shadow-xl;
+  }
+  
+  .card.featured {
+    @apply bg-gradient-to-b from-yellow-600/20 to-secondary-dark/60;
+  }
+  
+  .nav-link {
+    @apply relative;
+  }
+  
+  .nav-link:hover::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-discord-blue;
+  }
+  
+  .social-icon {
+    @apply w-10 h-10 bg-secondary-dark/60 hover:bg-secondary-dark/80 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110 hover:brightness-125;
+  }
+  
+  .tabs {
+    @apply flex justify-center;
+  }
+  
+  .tab {
+    @apply px-6 py-2 rounded-lg font-bold text-sm transition-colors uppercase tracking-wide;
+  }
+  
+  .tab.active {
+    @apply bg-discord-blue text-white;
+  }
+  
+  .tab:not(.active) {
+    @apply text-discord-blue hover:text-white hover:bg-secondary-dark/60;
+  }
+  
+  .top-3-grid {
+    @apply grid md:grid-cols-3 gap-6 max-w-4xl mx-auto;
+  }
+  
+  .place-label {
+    @apply font-black;
+  }
+  
+  .avatar-wrapper img {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+  
+  .list-entries {
+    @apply grid md:grid-cols-2 gap-3 max-w-4xl mx-auto;
+  }
+  
+  .entry {
+    @apply glass p-4 flex items-center justify-between hover:bg-white/5 transition-colors;
+  }
+  
+  .bundles-carousel {
+    @apply relative;
+  }
+  
+  .carousel-arrow {
+    @apply absolute top-1/2 transform -translate-y-1/2 text-light-gray hover:text-white transition-colors z-10 w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10;
+  }
+  
+  .items-grid {
+    @apply grid grid-cols-4 gap-3;
+  }
+  
+  .item-slot {
+    @apply bg-white/5 border border-dashed border-white/20 rounded p-4 text-center hover:border-discord-blue transition-colors;
+  }
+  
+  .compare-table {
+    @apply grid lg:grid-cols-3 gap-8;
+  }
+  
+  .column {
+    @apply rounded-2xl overflow-hidden;
+    background: linear-gradient(180deg, #2A2D2E, #1A1C1D);
+  }
+  
+  .perks-list {
+    @apply space-y-4;
+  }
+  
+  .perk-item {
+    @apply flex items-center justify-between;
+  }
+  
+  .bonus-badge {
+    @apply bg-discord-blue/15 text-discord-blue font-semibold text-xs px-2 py-1 rounded;
+  }
+  
+  .image-placeholder {
+    @apply bg-white/5 rounded-xl flex items-center justify-center;
+  }
+  
+  .community-callout {
+    @apply relative overflow-hidden cursor-pointer hover:scale-105 transition-transform duration-200;
+  }
+  
+  .live-count {
+    @apply flex items-center justify-center space-x-2 text-sm text-light-gray;
+  }
+  
+  .hero {
+    @apply relative flex flex-col justify-center items-center;
+    min-height: 20rem;
+  }
+  
+  .hero-bg {
+    @apply absolute inset-0 bg-cover bg-center;
+  }
+  
+  .hero-overlay {
+    @apply absolute inset-0 bg-black/70;
+  }
+  
+  .hero-content {
+    @apply relative z-10 text-center;
+  }
+  
+  .status-box {
+    @apply shadow-xl;
+  }
+
+  /* Text Slider Styles */
+  .text-slider-container {
+    @apply relative;
+  }
+
+  .text-slider-container p {
+    @apply text-center leading-relaxed;
+  }
+
+  /* Enhanced VIP Container Styles */
+  .vip-container,
+  .svip-container,
+  .vip-lifetime-container {
+    @apply relative;
+  }
+
+  .vip-container::before,
+  .svip-container::before,
+  .vip-lifetime-container::before {
+    content: '';
+    @apply absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-700;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: translateX(-100%);
+  }
+
+  .vip-container:hover::before {
+    @apply opacity-100;
+    animation: shimmer 2s ease-in-out infinite;
+  }
+
+  .svip-container:hover::before {
+    @apply opacity-100;
+    animation: shimmer 2s ease-in-out infinite 0.5s;
+  }
+
+  .vip-lifetime-container:hover::before {
+    @apply opacity-100;
+    animation: shimmer 2s ease-in-out infinite 1s;
+  }
+
+  /* Enhanced Crate Card Styles */
+  .crate-card {
+    @apply relative overflow-hidden;
+  }
+
+  .crate-card::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl opacity-0 transition-opacity duration-500;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: translateX(-100%);
+  }
+
+  .crate-card:hover::before {
+    @apply opacity-100;
+    animation: crate-shimmer 1.5s ease-in-out;
+  }
+
+  /* Crate Button Enhanced Styles */
+  .crate-btn {
+    @apply relative overflow-hidden;
+  }
+
+  .crate-btn::after {
+    content: '';
+    @apply absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+  }
+
+  .crate-btn:hover::after {
+    @apply opacity-100;
+    animation: button-ripple 0.6s ease-out;
+  }
+
+  /* Crate Rarity Glow Effects */
+  .crate-mystery {
+    box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+  }
+
+  .crate-treasure {
+    box-shadow: 0 0 25px rgba(234, 179, 8, 0.4);
+  }
+
+  .crate-legendary {
+    box-shadow: 0 0 30px rgba(147, 51, 234, 0.5);
+  }
+
+  .crate-mystery:hover {
+    box-shadow: 0 0 40px rgba(217, 119, 6, 0.6);
+  }
+
+  .crate-treasure:hover {
+    box-shadow: 0 0 45px rgba(234, 179, 8, 0.7);
+  }
+
+  .crate-legendary:hover {
+    box-shadow: 0 0 50px rgba(147, 51, 234, 0.8);
+  }
+
+  /* Server Map Styles - Responsive Design */
+  .map-container {
+    @apply relative;
+  }
+
+  .map-background {
+    @apply min-h-96 relative;
+  }
+
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(60, 206, 60, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(60, 206, 60, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: grid-pulse 4s ease-in-out infinite;
+  }
+
+  /* Responsive Map Grid */
+  .map-grid {
+    @apply grid gap-2 relative z-20;
+    /* Mobile: Single column */
+    grid-template-columns: 1fr;
+  }
+
+  /* Tablet: 2 columns */
+  @media (min-width: 640px) {
+    .map-grid {
+      grid-template-columns: repeat(2, 1fr);
+      @apply gap-3;
+    }
+  }
+
+  /* Desktop: 3 columns */
+  @media (min-width: 1024px) {
+    .map-grid {
+      grid-template-columns: repeat(3, 1fr);
+      @apply gap-4;
+    }
+  }
+
+  .map-row {
+    @apply contents;
+  }
+
+  /* Responsive Map Tiles */
+  .map-tile {
+    @apply relative rounded-2xl border-2 transition-all duration-300 cursor-pointer overflow-hidden;
+    /* Mobile: Smaller padding and height */
+    @apply p-3;
+    min-height: 100px;
+  }
+
+  /* Tablet: Medium padding and height */
+  @media (min-width: 640px) {
+    .map-tile {
+      @apply p-4;
+      min-height: 120px;
+    }
+  }
+
+  /* Desktop: Full padding and height */
+  @media (min-width: 1024px) {
+    .map-tile {
+      @apply p-6;
+      min-height: 140px;
+    }
+  }
+
+  .map-tile:hover {
+    @apply scale-105 -translate-y-2;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+
+  /* Mobile: Reduce hover effects */
+  @media (max-width: 1023px) {
+    .map-tile:hover {
+      @apply scale-102 -translate-y-1;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+  }
+
+  .tile-content {
+    @apply relative z-10 text-center;
+  }
+
+  /* Responsive Biome Icons */
+  .biome-icon {
+    @apply block mb-1;
+    /* Mobile: Smaller icons */
+    font-size: 1.5rem;
+  }
+
+  /* Tablet: Medium icons */
+  @media (min-width: 640px) {
+    .biome-icon {
+      font-size: 2rem;
+      @apply mb-2;
+    }
+  }
+
+  /* Desktop: Full size icons */
+  @media (min-width: 1024px) {
+    .biome-icon {
+      font-size: 3rem;
+    }
+  }
+
+  /* Responsive Text Sizes */
+  .biome-name {
+    @apply text-white font-bold uppercase tracking-wide;
+    /* Mobile: Smaller text */
+    font-size: 0.75rem;
+    @apply mb-1;
+  }
+
+  /* Tablet and up: Larger text */
+  @media (min-width: 640px) {
+    .biome-name {
+      font-size: 0.875rem;
+    }
+  }
+
+  .biome-description {
+    @apply text-light-gray;
+    /* Mobile: Very small text */
+  
+  .prose p, .prose div, .prose span {
+    @apply break-words;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+  }
+  
+  .prose strong, .prose em, .prose u {
+    @apply break-words;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+  }
+    font-size: 0.625rem;
+  }
+
+  /* Tablet and up: Slightly larger */
+  @media (min-width: 640px) {
+    .biome-description {
+      font-size: 0.75rem;
+    }
+  }
+
+  .tile-glow {
+    @apply absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300;
+  }
+
+  .map-tile:hover .tile-glow {
+    @apply opacity-30;
+  }
+
+  /* Biome-specific styles */
+  .ice-biome {
+    @apply border-blue-300/30 bg-gradient-to-br from-blue-900/20 to-cyan-900/20;
+  }
+  .ice-glow {
+    @apply bg-gradient-to-br from-blue-400 to-cyan-400;
+  }
+
+  .mountain-biome {
+    @apply border-gray-400/30 bg-gradient-to-br from-gray-800/20 to-slate-800/20;
+  }
+  .mountain-glow {
+    @apply bg-gradient-to-br from-gray-400 to-slate-400;
+  }
+
+  .sky-biome {
+    @apply border-sky-300/30 bg-gradient-to-br from-sky-900/20 to-blue-900/20;
+  }
+  .sky-glow {
+    @apply bg-gradient-to-br from-sky-400 to-blue-400;
+  }
+
+  .forest-biome {
+    @apply border-green-400/30 bg-gradient-to-br from-green-900/20 to-emerald-900/20;
+  }
+  .forest-glow {
+    @apply bg-gradient-to-br from-green-400 to-emerald-400;
+  }
+
+  .spawn-biome {
+    @apply border-grass-green/50 bg-gradient-to-br from-grass-green/20 to-green-600/20;
+  }
+  .spawn-glow {
+    @apply bg-gradient-to-br from-grass-green to-green-400;
+  }
+
+  .desert-biome {
+    @apply border-yellow-400/30 bg-gradient-to-br from-yellow-900/20 to-orange-900/20;
+  }
+  .desert-glow {
+    @apply bg-gradient-to-br from-yellow-400 to-orange-400;
+  }
+
+  .ocean-biome {
+    @apply border-blue-500/30 bg-gradient-to-br from-blue-900/20 to-indigo-900/20;
+  }
+  .ocean-glow {
+    @apply bg-gradient-to-br from-blue-500 to-indigo-500;
+  }
+
+  .jungle-biome {
+    @apply border-emerald-400/30 bg-gradient-to-br from-emerald-900/20 to-green-900/20;
+  }
+  .jungle-glow {
+    @apply bg-gradient-to-br from-emerald-400 to-green-500;
+  }
+
+  .nether-biome {
+    @apply border-red-500/30 bg-gradient-to-br from-red-900/20 to-orange-900/20;
+  }
+  .nether-glow {
+    @apply bg-gradient-to-br from-red-500 to-orange-500;
+  }
+
+  /* Responsive Spawn Indicator */
+  .spawn-indicator {
+    @apply absolute bg-grass-green text-primary-dark font-bold rounded-full z-20 shadow-lg border-2 border-white/20;
+    /* Mobile: Smaller indicator */
+    @apply top-1 right-1 text-xs px-2 py-0.5;
+    animation: spawn-pulse 2s ease-in-out infinite;
+  }
+
+  /* Tablet and up: Larger indicator */
+  @media (min-width: 640px) {
+    .spawn-indicator {
+      @apply top-2 right-2 text-xs px-3 py-1;
+    }
+  }
+
+  /* Responsive Map Paths - Hide on mobile for cleaner look */
+  .map-paths {
+    @apply z-10 hidden;
+  }
+
+  /* Show paths on tablet and up */
+  @media (min-width: 1024px) {
+    .map-paths {
+      @apply block;
+    }
+  }
+
+  .path {
+    @apply absolute bg-gradient-to-r from-transparent via-grass-green/20 to-transparent;
+    animation: path-glow 3s ease-in-out infinite;
+  }
+
+  .horizontal-path {
+    @apply h-px;
+    width: calc(100% - 2rem);
+    left: 1rem;
+  }
+
+  .path-1 { top: 23%; }
+  .path-2 { top: 50%; }
+  .path-3 { top: 77%; }
+
+  .vertical-path {
+    @apply w-px;
+    height: calc(100% - 2rem);
+    top: 1rem;
+  }
+
+  .path-4 { left: 23%; }
+  .path-5 { left: 50%; }
+  .path-6 { left: 77%; }
+
+  /* Responsive Floating Elements */
+  .floating-elements {
+    @apply z-30;
+    /* Hide on mobile for performance */
+    @apply hidden;
+  }
+
+  /* Show on tablet and up */
+  @media (min-width: 768px) {
+    .floating-elements {
+      @apply block;
+    }
+  }
+
+  .floating-particle {
+    @apply absolute opacity-60;
+    /* Responsive particle sizes */
+    font-size: 1rem;
+  }
+
+  @media (min-width: 1024px) {
+    .floating-particle {
+      font-size: 1.125rem;
+    }
+  }
+
+  .particle-1 {
+    top: 15%;
+    left: 10%;
+    animation: float-particle 6s ease-in-out infinite;
+  }
+
+  .particle-2 {
+    top: 25%;
+    right: 15%;
+    animation: float-particle 8s ease-in-out infinite 1s;
+  }
+
+  .particle-3 {
+    bottom: 30%;
+    left: 20%;
+    animation: float-particle 7s ease-in-out infinite 2s;
+  }
+
+  .particle-4 {
+    top: 60%;
+    right: 25%;
+    animation: float-particle 5s ease-in-out infinite 3s;
+  }
+
+  .particle-5 {
+    bottom: 15%;
+    right: 10%;
+    animation: float-particle 9s ease-in-out infinite 4s;
+  }
+
+  .particle-6 {
+    top: 40%;
+    left: 70%;
+    animation: float-particle 6s ease-in-out infinite 5s;
+  }
+
+  /* Responsive Map Legend */
+  .map-legend {
+    @apply relative z-10;
+  }
+
+  .legend-item {
+    @apply transform transition-all duration-200 hover:scale-105;
+  }
+
+  /* Mobile: Reduce hover effects */
+  @media (max-width: 767px) {
+    .legend-item:hover {
+      @apply scale-100;
+    }
+  }
+
+  /* Responsive Server Stats */
+  .server-stats {
+    @apply relative z-10;
+  }
+
+  .stat-card {
+    @apply transform transition-all duration-300;
+  }
+
+  /* Mobile: Reduce hover effects */
+  @media (max-width: 767px) {
+    .stat-card:hover {
+      @apply scale-100;
+    }
+  }
+
+  /* Vote Section Styles */
+  .vote-progress-bar {
+    @apply relative overflow-hidden;
+  }
+
+  .vote-progress-bar::after {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    animation: progress-shimmer 2s ease-in-out infinite;
+    transform: translateX(-100%);
+  }
+
+  .vote-card {
+    @apply relative overflow-hidden;
+  }
+
+  .vote-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 transition-opacity duration-300;
+    transform: translateX(-100%);
+  }
+
+  .vote-card:hover::before {
+    @apply opacity-100;
+    animation: card-shimmer 1.5s ease-in-out;
+  }
+
+  /* Vote Button Pulse Effect */
+  .vote-btn-pulse {
+    @apply relative;
+  }
+
+  .vote-btn-pulse::after {
+    content: '';
+    @apply absolute inset-0 rounded-lg bg-grass-green/30 opacity-0;
+    animation: button-pulse 2s ease-in-out infinite;
+  }
+
+  /* Reward Rarity Glow Effects */
+  .reward-legendary {
+    @apply relative;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+  }
+
+  .reward-legendary::before {
+    content: '';
+    @apply absolute inset-0 rounded-xl bg-gradient-to-r from-yellow-400/20 via-transparent to-yellow-400/20;
+    animation: legendary-glow 3s ease-in-out infinite;
+  }
+
+  .reward-epic {
+    box-shadow: 0 0 15px rgba(147, 51, 234, 0.3);
+  }
+
+  .reward-rare {
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+  }
+
+  /* Vote Stats Animation */
+  .vote-stat-card {
+    @apply relative overflow-hidden;
+  }
+
+  .vote-stat-card::after {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-50;
+    animation: stat-line-pulse 3s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);
+  }
+  
+  .bg-gradient-radial {
+    background: radial-gradient(circle at center, var(--tw-gradient-stops));
+  }
+
+  .bg-gradient-conic {
+    background: conic-gradient(var(--tw-gradient-stops));
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-primary-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-light-blue rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-blue-400;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+  @apply outline-none ring-2 ring-grass-green ring-offset-2 ring-offset-primary-dark;
+}
+
+/* Animation for live player count */
+@keyframes pulse-blue {
+  0%, 100% {
+    @apply bg-discord-blue;
+  }
+  50% {
+    @apply bg-blue-300;
+  }
+}
+
+.animate-pulse-green {
+  animation: pulse-blue 2s infinite;
+}
+
+/* Enhanced Hero Background Animations */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+  25% { transform: translateY(-15px) translateX(8px); opacity: 0.8; }
+  50% { transform: translateY(-8px) translateX(-5px); opacity: 0.5; }
+  75% { transform: translateY(-20px) translateX(3px); opacity: 0.9; }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.3; }
+  33% { transform: translateY(-12px) translateX(-6px); opacity: 0.7; }
+  66% { transform: translateY(-18px) translateX(8px); opacity: 0.4; }
+}
+
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.5; }
+  50% { transform: translateY(-25px) translateX(-10px); opacity: 1; }
+}
+
+.animate-float-slow {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+.animate-float-medium {
+  animation: float-medium 7s ease-in-out infinite;
+}
+
+.animate-float-fast {
+  animation: float-fast 5s ease-in-out infinite;
+}
+
+/* New Twinkling Animations */
+@keyframes twinkle-1 {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes twinkle-2 {
+  0%, 100% { opacity: 0.3; transform: scale(0.6); }
+  33% { opacity: 0.9; transform: scale(1.1); }
+  66% { opacity: 0.1; transform: scale(0.9); }
+}
+
+@keyframes twinkle-3 {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  25% { opacity: 0.8; transform: scale(1.3); }
+  75% { opacity: 0.4; transform: scale(0.7); }
+}
+
+.animate-twinkle-1 {
+  animation: twinkle-1 3s ease-in-out infinite;
+}
+
+.animate-twinkle-2 {
+  animation: twinkle-2 4s ease-in-out infinite 0.5s;
+}
+
+.animate-twinkle-3 {
+  animation: twinkle-3 2.5s ease-in-out infinite 1s;
+}
+
+/* Light Ray Animations */
+@keyframes light-ray-1 {
+  0%, 100% { opacity: 0; transform: translateY(0px) scaleY(0.5); }
+  50% { opacity: 0.6; transform: translateY(-10px) scaleY(1.2); }
+}
+
+@keyframes light-ray-2 {
+  0%, 100% { opacity: 0; transform: translateY(0px) scaleY(0.8); }
+  40% { opacity: 0.4; transform: translateY(-8px) scaleY(1); }
+  80% { opacity: 0.2; transform: translateY(-15px) scaleY(1.5); }
+}
+
+@keyframes light-ray-3 {
+  0%, 100% { opacity: 0; transform: translateY(0px) scaleY(0.3); }
+  60% { opacity: 0.5; transform: translateY(-12px) scaleY(1.1); }
+}
+
+.animate-light-ray-1 {
+  animation: light-ray-1 6s ease-in-out infinite;
+}
+
+.animate-light-ray-2 {
+  animation: light-ray-2 8s ease-in-out infinite 1s;
+}
+
+.animate-light-ray-3 {
+  animation: light-ray-3 7s ease-in-out infinite 2s;
+}
+
+/* Glow Pulse Animations */
+@keyframes glow-pulse-1 {
+  0%, 100% { opacity: 0.1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.2); }
+}
+
+@keyframes glow-pulse-2 {
+  0%, 100% { opacity: 0.08; transform: scale(0.9); }
+  33% { opacity: 0.25; transform: scale(1.1); }
+  66% { opacity: 0.15; transform: scale(1.05); }
+}
+
+@keyframes glow-pulse-3 {
+  0%, 100% { opacity: 0.05; transform: scale(1.1); }
+  50% { opacity: 0.2; transform: scale(1.3); }
+}
+
+.animate-glow-pulse-1 {
+  animation: glow-pulse-1 8s ease-in-out infinite;
+}
+
+.animate-glow-pulse-2 {
+  animation: glow-pulse-2 10s ease-in-out infinite 1.5s;
+}
+
+.animate-glow-pulse-3 {
+  animation: glow-pulse-3 12s ease-in-out infinite 3s;
+}
+
+/* Enhanced Text Animations */
+@keyframes pulse-bright {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-bright {
+  animation: pulse-bright 2s ease-in-out infinite;
+}
+
+/* Hero Content Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 1s ease-out;
+}
+
+.animate-fade-in-up-delay {
+  animation: fade-in-up 1s ease-out 0.2s both;
+}
+
+.animate-fade-in-up-delay-2 {
+  animation: fade-in-up 1s ease-out 0.4s both;
+}
+
+.animate-fade-in-up-delay-3 {
+  animation: fade-in-up 1s ease-out 0.6s both;
+}
+
+/* Chest Animations */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Legendary Chest Floating Particles */
+@keyframes float-1 {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.6; }
+  25% { transform: translateY(-15px) translateX(8px); opacity: 1; }
+  50% { transform: translateY(-8px) translateX(-5px); opacity: 0.4; }
+  75% { transform: translateY(-20px) translateX(3px); opacity: 0.8; }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+  33% { transform: translateY(-12px) translateX(-6px); opacity: 0.9; }
+  66% { transform: translateY(-18px) translateX(4px); opacity: 0.6; }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.7; }
+  50% { transform: translateY(-25px) translateX(-10px); opacity: 1; }
+}
+
+@keyframes float-4 {
+  0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.5; }
+  40% { transform: translateY(-10px) translateX(7px); opacity: 0.8; }
+  80% { transform: translateY(-16px) translateX(-3px); opacity: 0.3; }
+}
+
+.animate-float-1 {
+  animation: float-1 4s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: float-2 5s ease-in-out infinite 0.5s;
+}
+
+.animate-float-3 {
+  animation: float-3 6s ease-in-out infinite 1s;
+}
+
+.animate-float-4 {
+  animation: float-4 3.5s ease-in-out infinite 1.5s;
+}
+
+/* Treasure Chest Sparkle Animations */
+@keyframes sparkle-1 {
+  0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+  25% { transform: scale(1.2) rotate(90deg); opacity: 1; }
+  50% { transform: scale(0.8) rotate(180deg); opacity: 0.6; }
+  75% { transform: scale(1.5) rotate(270deg); opacity: 0.8; }
+}
+
+@keyframes sparkle-2 {
+  0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+  30% { transform: scale(1) rotate(120deg); opacity: 1; }
+  60% { transform: scale(0.5) rotate(240deg); opacity: 0.4; }
+}
+
+@keyframes sparkle-3 {
+  0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+  20% { transform: scale(1.3) rotate(60deg); opacity: 0.9; }
+  40% { transform: scale(0.7) rotate(180deg); opacity: 0.5; }
+  80% { transform: scale(1.1) rotate(300deg); opacity: 0.7; }
+}
+
+@keyframes sparkle-4 {
+  0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1.4) rotate(180deg); opacity: 1; }
+}
+
+@keyframes sparkle-5 {
+  0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+  35% { transform: scale(0.9) rotate(150deg); opacity: 0.8; }
+  70% { transform: scale(1.2) rotate(300deg); opacity: 0.6; }
+}
+
+.animate-sparkle-1 {
+  animation: sparkle-1 2s ease-in-out infinite;
+}
+
+.animate-sparkle-2 {
+  animation: sparkle-2 2.5s ease-in-out infinite 0.3s;
+}
+
+.animate-sparkle-3 {
+  animation: sparkle-3 3s ease-in-out infinite 0.6s;
+}
+
+.animate-sparkle-4 {
+  animation: sparkle-4 1.8s ease-in-out infinite 0.9s;
+}
+
+.animate-sparkle-5 {
+  animation: sparkle-5 2.2s ease-in-out infinite 1.2s;
+}
+
+/* Mystery Chest Smoke Animations */
+@keyframes smoke-1 {
+  0% { transform: translateY(0px) scale(0.5); opacity: 0.6; }
+  50% { transform: translateY(-20px) scale(1); opacity: 0.3; }
+  100% { transform: translateY(-40px) scale(1.5); opacity: 0; }
+}
+
+@keyframes smoke-2 {
+  0% { transform: translateY(0px) scale(0.3); opacity: 0.5; }
+  50% { transform: translateY(-15px) scale(0.8); opacity: 0.4; }
+  100% { transform: translateY(-35px) scale(1.2); opacity: 0; }
+}
+
+@keyframes smoke-3 {
+  0% { transform: translateY(0px) scale(0.4); opacity: 0.7; }
+  50% { transform: translateY(-18px) scale(0.9); opacity: 0.2; }
+  100% { transform: translateY(-38px) scale(1.3); opacity: 0; }
+}
+
+.animate-smoke-1 {
+  animation: smoke-1 3s ease-out infinite;
+}
+
+.animate-smoke-2 {
+  animation: smoke-2 3.5s ease-out infinite 0.5s;
+}
+
+.animate-smoke-3 {
+  animation: smoke-3 4s ease-out infinite 1s;
+}
+
+/* VIP Container Shimmer Effect */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Enhanced Crate Animations */
+@keyframes crate-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes button-ripple {
+  0% { 
+    transform: scale(0); 
+    opacity: 1; 
+  }
+  100% { 
+    transform: scale(2); 
+    opacity: 0; 
+  }
+}
+
+@keyframes crate-glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px currentColor; 
+  }
+  50% { 
+    box-shadow: 0 0 40px currentColor, 0 0 60px currentColor; 
+  }
+}
+
+/* Crate Button Hover Effects */
+.crate-btn-mystery:hover {
+  animation: crate-glow-pulse 2s ease-in-out infinite;
+  --tw-shadow-color: rgb(217 119 6 / 0.5);
+}
+
+.crate-btn-treasure:hover {
+  animation: crate-glow-pulse 2s ease-in-out infinite;
+  --tw-shadow-color: rgb(234 179 8 / 0.6);
+}
+
+.crate-btn-legendary:hover {
+  animation: crate-glow-pulse 2s ease-in-out infinite;
+  --tw-shadow-color: rgb(147 51 234 / 0.7);
+}
+
+/* Server Map Specific Animations */
+@keyframes grid-pulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes path-glow {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes float-particle {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg); 
+    opacity: 0.4; 
+  }
+  25% { 
+    transform: translateY(-10px) translateX(5px) rotate(90deg); 
+    opacity: 0.8; 
+  }
+  50% { 
+    transform: translateY(-5px) translateX(-3px) rotate(180deg); 
+    opacity: 0.6; 
+  }
+  75% { 
+    transform: translateY(-15px) translateX(2px) rotate(270deg); 
+    opacity: 1; 
+  }
+}
+
+@keyframes spawn-pulse {
+  0%, 100% { 
+    transform: scale(1); 
+    box-shadow: 0 0 0 0 rgba(60, 206, 60, 0.7);
+  }
+  50% { 
+    transform: scale(1.05); 
+    box-shadow: 0 0 0 8px rgba(60, 206, 60, 0);
+  }
+}
+
+/* Vote Section Specific Animations */
+@keyframes progress-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes card-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes button-pulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+@keyframes legendary-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes stat-line-pulse {
+  0%, 100% { transform: translateX(-100%); opacity: 0; }
+  50% { transform: translateX(0%); opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+/* Vote Count Animation */
+@keyframes count-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-count-up {
+  animation: count-up 0.5s ease-out;
+}
+
+/* Reward Tier Animations */
+@keyframes tier-glow {
+  0%, 100% { box-shadow: 0 0 5px currentColor; }
+  50% { box-shadow: 0 0 20px currentColor, 0 0 30px currentColor; }
+}
+
+.animate-tier-glow {
+  animation: tier-glow 2s ease-in-out infinite;
+}
+
+/* Slider Styles */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #5865F2;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 10px rgba(88, 101, 242, 0.5);
+}
+
+.slider::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #5865F2;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 10px rgba(88, 101, 242, 0.5);
+}
+
+.slider::-webkit-slider-track {
+  height: 8px;
+  background: linear-gradient(to right, #5865F2 0%, #5865F2 100%);
+  border-radius: 4px;
+}
+
+.slider::-moz-range-track {
+  height: 8px;
+  background: linear-gradient(to right, #5865F2 0%, #5865F2 100%);
+  border-radius: 4px;
+  border: none;
+}
+
+/* Navbar Logo Pulse Animation */
+@keyframes pulse-logo {
+  0%, 100% { 
+    transform: scale(1.15); 
+  }
+  50% { 
+    transform: scale(1.35); 
+  }
+}
+
+.animate-pulse-logo {
+  animation: pulse-logo 3s ease-in-out infinite;
+}
+/* Hero Logo Pulse Animation - More Subtle */
+@keyframes pulse-hero-logo {
+  0%, 100% { 
+    transform: scale(1.15); 
+  }
+  50% { 
+    transform: scale(1.25); 
+  }
+}
+
+.animate-pulse-hero-logo {
+  animation: pulse-hero-logo 3s ease-in-out infinite;
+}
+
+/* Static scale classes */
+.scale-135 {
+  transform: scale(1.35);
+}

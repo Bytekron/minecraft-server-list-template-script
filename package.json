@@ -1,0 +1,77 @@
+{
+  "name": "servercraft-nextjs",
+  "version": "1.0.0",
+  "description": "Premium Minecraft server website template built with Next.js, TypeScript, and Tailwind CSS",
+  "keywords": [
+    "minecraft",
+    "server",
+    "website",
+    "template",
+    "nextjs",
+    "typescript",
+    "tailwind",
+    "responsive",
+    "gaming"
+  ],
+  "author": {
+    "name": "CreeperCraft Template",
+    "email": "support@template.com",
+    "url": "https://template.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/creepercraft-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/creepercraft-template/issues"
+  },
+  "homepage": "https://github.com/your-username/creepercraft-template#readme",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,md}\"",
+    "analyze": "cross-env ANALYZE=true next build"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.53.0",
+    "lucide-react": "^0.344.0",
+    "next": "^14.0.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^14.0.4",
+    "@types/node": "^20.10.5",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.18",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "^14.0.4",
+    "postcss": "^8.4.35",
+    "prettier": "^3.0.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.5.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

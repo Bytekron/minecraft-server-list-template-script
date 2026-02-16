@@ -1,0 +1,87 @@
+# Robots.txt for ServerCraft - Minecraft Server List
+# Updated: 2025-01-28
+
+User-agent: *
+Allow: /
+
+# High priority pages
+Allow: /java
+Allow: /bedrock
+Allow: /crossplatform
+Allow: /popular
+Allow: /new
+Allow: /survival
+Allow: /pvp
+Allow: /skyblock
+Allow: /creative
+Allow: /prison
+Allow: /factions
+Allow: /towny
+Allow: /minigames
+Allow: /1.21
+Allow: /1.20
+Allow: /1.19
+Allow: /1.18
+Allow: /server/
+
+# Block admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/internal/
+Disallow: /dashboard/
+Disallow: /login
+Disallow: /register
+Disallow: /my-servers
+Disallow: /edit-account
+
+# Block temporary and system files
+Disallow: /tmp/
+Disallow: /logs/
+Disallow: /cache/
+Disallow: /*.json$
+Disallow: /*?*utm_*
+Disallow: /*?*ref=*
+Disallow: /*?*fbclid=*
+
+# Allow search engines to access images
+Allow: /images/
+Allow: /logos/
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.webp
+Allow: /*.gif
+
+# Sitemap location
+Sitemap: https://servercraft.net/sitemap.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Specific bot instructions
+User-agent: Googlebot
+Crawl-delay: 0
+Allow: /
+
+User-agent: Bingbot
+Crawl-delay: 1
+Allow: /
+
+User-agent: Slurp
+Crawl-delay: 2
+Allow: /
+
+# Block aggressive crawlers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Archive crawlers
+User-agent: ia_archiver
+Allow: /
+Crawl-delay: 5
