@@ -1,4 +1,4 @@
-# CreeperCraft - Premium Minecraft Server List Template
+# ServerCraft - Premium Minecraft Server List Template
 
 (Legacy Server List Template from Minecraft Server Buzz Script)
 
